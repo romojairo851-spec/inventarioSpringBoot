@@ -1,5 +1,7 @@
 package controlInventario.Inicio.controller;
 
+import jakarta.validation.Valid;
+
 import controlInventario.Inicio.model.Usuario;
 import controlInventario.Inicio.service.UsuarioService;
 
@@ -9,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+
+
 
 //Controlador REST para manejar las solicitudes HTTP relacionadas con los usuarios  
 @RestController
@@ -21,10 +25,9 @@ public class UsuarioController {
 
     // Crear un nuevo usuario
     @PostMapping
-    public Usuario crearUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.guardarUsuario(usuario);      
-
-    }
+public Usuario crearUsuario(@Valid @RequestBody Usuario usuario) {
+    return usuarioService.guardarUsuario(usuario);
+}
     //Listar todos los usuarios
     @GetMapping
     public List<Usuario> listarUsuarios() {
