@@ -15,7 +15,7 @@ Aplicación web que permite la gestión de usuarios mediante operaciones básica
 - MySQL
 - Maven
 
-## ▶️Ejecución
+## Ejecución
 
 Ejecutar la clase principal:
 
